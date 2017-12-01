@@ -118,3 +118,6 @@ Class | Method | HTTP request | Description
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
 
+## Test calls in Postman
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/5348de8f62f83cddcee3)
