@@ -129,7 +129,7 @@ module SwaggerClient
 
     def initialize
       @scheme = 'https'
-      @host = 'api.thesmsworks.co.uk:8080'
+      @host = 'api.thesmsworks.co.uk'
       @base_path = '/v1'
       @api_key = {}
       @api_key_prefix = {}
