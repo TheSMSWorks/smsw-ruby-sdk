@@ -13,33 +13,22 @@ Swagger Codegen version: 2.3.1
 require 'date'
 
 module SwaggerClient
-  # authorisation object
-  class Login
-    # Your customer ID, available from your account area at https://thesmsworks.co.uk/user/login
-    attr_accessor :customerid
 
-    # API Key
-    attr_accessor :key
-
-    # API Secret
-    attr_accessor :secret
+  class MessageMetadata
+    attr_accessor :schema
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'customerid' => :'customerid',
-        :'key' => :'key',
-        :'secret' => :'secret'
+        :'schema' => :'schema'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'customerid' => :'String',
-        :'key' => :'String',
-        :'secret' => :'String'
+        :'schema' => :'MetaData'
       }
     end
 
@@ -51,16 +40,8 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'customerid')
-        self.customerid = attributes[:'customerid']
-      end
-
-      if attributes.has_key?(:'key')
-        self.key = attributes[:'key']
-      end
-
-      if attributes.has_key?(:'secret')
-        self.secret = attributes[:'secret']
+      if attributes.has_key?(:'schema')
+        self.schema = attributes[:'schema']
       end
 
     end
@@ -83,9 +64,7 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          customerid == o.customerid &&
-          key == o.key &&
-          secret == o.secret
+          schema == o.schema
     end
 
     # @see the `==` method
@@ -97,7 +76,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [customerid, key, secret].hash
+      [schema].hash
     end
 
     # Builds the object from hash

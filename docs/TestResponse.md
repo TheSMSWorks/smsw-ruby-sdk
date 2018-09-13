@@ -1,4 +1,4 @@
-# SwaggerClient::HelloWorldResponse
+# SwaggerClient::TestResponse
 
 ## Properties
 Name | Type | Description | Notes

@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **created** | **String** |  | 
 **customerid** | **String** |  | 
 **destination** | **Float** |  | 
+**failurereason** | [**MessageResponseFailurereason**](MessageResponseFailurereason.md) |  | [optional] 
+**id** | **String** |  | [optional] 
 **keyword** | **String** |  | 
 **messageid** | **String** |  | 
 **modified** | **String** |  | 

@@ -13,33 +13,30 @@ Swagger Codegen version: 2.3.1
 require 'date'
 
 module SwaggerClient
-  # authorisation object
-  class Login
-    # Your customer ID, available from your account area at https://thesmsworks.co.uk/user/login
-    attr_accessor :customerid
 
-    # API Key
-    attr_accessor :key
+  class MessageResponseFailurereason
+    attr_accessor :code
 
-    # API Secret
-    attr_accessor :secret
+    attr_accessor :details
+
+    attr_accessor :permanent
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'customerid' => :'customerid',
-        :'key' => :'key',
-        :'secret' => :'secret'
+        :'code' => :'code',
+        :'details' => :'details',
+        :'permanent' => :'permanent'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'customerid' => :'String',
-        :'key' => :'String',
-        :'secret' => :'String'
+        :'code' => :'Float',
+        :'details' => :'String',
+        :'permanent' => :'BOOLEAN'
       }
     end
 
@@ -51,16 +48,16 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'customerid')
-        self.customerid = attributes[:'customerid']
+      if attributes.has_key?(:'code')
+        self.code = attributes[:'code']
       end
 
-      if attributes.has_key?(:'key')
-        self.key = attributes[:'key']
+      if attributes.has_key?(:'details')
+        self.details = attributes[:'details']
       end
 
-      if attributes.has_key?(:'secret')
-        self.secret = attributes[:'secret']
+      if attributes.has_key?(:'permanent')
+        self.permanent = attributes[:'permanent']
       end
 
     end
@@ -83,9 +80,9 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          customerid == o.customerid &&
-          key == o.key &&
-          secret == o.secret
+          code == o.code &&
+          details == o.details &&
+          permanent == o.permanent
     end
 
     # @see the `==` method
@@ -97,7 +94,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [customerid, key, secret].hash
+      [code, details, permanent].hash
     end
 
     # Builds the object from hash

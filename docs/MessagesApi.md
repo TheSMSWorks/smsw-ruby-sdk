@@ -5,6 +5,7 @@ All URIs are relative to *https://api.thesmsworks.co.uk/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cancel_scheduled_job**](MessagesApi.md#cancel_scheduled_job) | **DELETE** /messages/schedule/{messageid} | 
+[**get_inbox_messages**](MessagesApi.md#get_inbox_messages) | **POST** /messages/inbox | 
 [**get_message_by_id**](MessagesApi.md#get_message_by_id) | **GET** /messages/{messageid} | 
 [**get_messages**](MessagesApi.md#get_messages) | **POST** /messages | 
 [**schedule_message**](MessagesApi.md#schedule_message) | **POST** /message/schedule | 
@@ -52,6 +53,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CancelledMessageResponse**](CancelledMessageResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+
+
+# **get_inbox_messages**
+> MessagesResponse get_inbox_messages(query)
+
+
+
+Get unread uncoming messages matching your search criteria
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+# setup authorization
+SwaggerClient.configure do |config|
+  # Configure API key authorization: JWT
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['Authorization'] = 'Bearer'
+end
+
+api_instance = SwaggerClient::MessagesApi.new
+
+query = SwaggerClient::Query.new # Query | 
+
+
+begin
+  result = api_instance.get_inbox_messages(query)
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling MessagesApi->get_inbox_messages: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | [**Query**](Query.md)|  | 
+
+### Return type
+
+[**MessagesResponse**](MessagesResponse.md)
 
 ### Authorization
 
